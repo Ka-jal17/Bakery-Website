@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Design Your Cake | Sweet Crumbs Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .design-container { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .preview-box {
+      background: var(--flour-dim);
+      border-radius: 4px;
+      padding: 40px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      min-height: 600px;
+      border: 2px dashed var(--butter);
+    }
+    .preview-cake {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      margin: 20px auto;
+      box-shadow: 0 8px 24px rgba(43, 27, 18, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3rem;
+      transition: all 0.3s ease;
+    }
+    .form-group { margin-bottom: 24px; }
+    .form-group label {
+      display: block;
+      font-family: 'Space Mono', monospace;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      padding: 12px 14px;
+      border: 1px solid rgba(43, 27, 18, 0.25);
+      border-radius: 2px;
+      background: white;
+      box-sizing: border-box;
+    }
+    .form-group textarea { resize: vertical; min-height: 100px; }
+    .color-options {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+    }
+    .color-swatch {
+      width: 100%;
+      aspect-ratio: 1;
+      border-radius: 4px;
+      border: 3px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .color-swatch:hover { transform: scale(1.05); }
+    .color-swatch.selected { border-color: var(--espresso); box-shadow: 0 0 0 2px white, 0 0 0 4px var(--espresso); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .submit-btn {
+      width: 100%;
+      background: var(--jam);
+      color: var(--flour);
+      padding: 16px;
+      border: none;
+      border-radius: 2px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+    .submit-btn:hover { background: var(--jam-dark); }
+    .sub-note { font-size: 0.85rem; color: var(--muted); margin-top: 8px; }
+    @media (max-width: 900px) {
+      .design-container { grid-template-columns: 1fr; }
+      .form-row { grid-template-columns: 1fr; }
+      .preview-box { min-height: 400px; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="seo.html" class="brand">Sweet Crumbs</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="custom-orders.html">Custom Orders</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="visit.html">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="custom-design.html" class="cta-btn">Order a Cake</a>
+  </div>
+</header>
+<div class="lamination" role="presentation"></div>
+
+<section class="inner">
+  <div class="section-head">
+    <span class="label">Custom Cake Designer</span>
+    <h2>Design Your Perfect Cake</h2>
+    <p>Use our interactive designer to visualize your custom cake. Update the form and watch your creation come to life.</p>
+  </div>
+
+  <div class="design-container">
+    <!-- Preview Section -->
+    <div class="preview-box" id="previewBox">
+      <span class="label">Live Preview</span>
+      <div class="preview-cake" id="previewCake" style="background: #FFE5D9;">🎂</div>
+      <h3 id="previewText" style="margin: 0; color: var(--espresso);">Your Custom Cake</h3>
+      <p id="previewFlavor" style="color: var(--muted); margin: 8px 0;"></p>
+    </div>
+
+    <!-- Design Form -->
+    <div>
+      <form id="designForm" onchange="updatePreview()">
+        <div class="form-group">
+          <label for="occasion">Occasion</label>
+          <select id="occasion" required>
+            <option value="">Select an occasion</option>
+            <option value="birthday">Birthday</option>
+            <option value="wedding">Wedding</option>
+            <option value="anniversary">Anniversary</option>
+            <option value="corporate">Corporate Event</option>
+            <option value="graduation">Graduation</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="flavor">Cake Flavor</label>
+          <select id="flavor" required>
+            <option value="">Select a flavor</option>
+            <option value="chocolate">Dark Chocolate</option>
+            <option value="vanilla">Vanilla Bean</option>
+            <option value="strawberry">Strawberry</option>
+            <option value="red-velvet">Red Velvet</option>
+            <option value="lemon">Lemon Drizzle</option>
+            <option value="rasmalai">Rasmalai Fusion</option>
+          </select>
+          <p class="sub-note" id="flavorNote"></p>
+        </div>
+
+        <div class="form-group">
+          <label>Cake Color</label>
+          <div class="color-options">
+            <div class="color-swatch selected" style="background: #FFE5D9;" data-color="Cream" onclick="selectColor(this, 'Cream')"></div>
+            <div class="color-swatch" style="background: #8B4513;" data-color="Brown" onclick="selectColor(this, 'Brown')"></div>
+            <div class="color-swatch" style="background: #FFB6C1;" data-color="Pink" onclick="selectColor(this, 'Pink')"></div>
+            <div class="color-swatch" style="background: #87CEEB;" data-color="Blue" onclick="selectColor(this, 'Blue')"></div>
+            <div class="color-swatch" style="background: #FFFACD;" data-color="Yellow" onclick="selectColor(this, 'Yellow')"></div>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="size">Cake Size</label>
+            <select id="size" required>
+              <option value="0.5kg">0.5 kg (4 servings)</option>
+              <option value="1kg">1 kg (8 servings)</option>
+              <option value="1.5kg">1.5 kg (12 servings)</option>
+              <option value="2kg">2 kg (16 servings)</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="servings">Number of Tiers</label>
+            <select id="tiers" required>
+              <option value="1">1 Tier</option>
+              <option value="2">2 Tiers</option>
+              <option value="3">3 Tiers</option>
+              <option value="4">4 Tiers</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="message">Cake Message (optional)</label>
+          <input type="text" id="message" placeholder="e.g., Happy Birthday Ritika!" maxlength="50">
+          <p class="sub-note">50 characters max</p>
+        </div>
+
+        <div class="form-group">
+          <label for="specialRequests">Special Requests</label>
+          <textarea id="specialRequests" placeholder="Any dietary preferences, allergies, or special decorations? Tell us here..."></textarea>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" placeholder="Full Name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" placeholder="your@email.com" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="+91-XXXXXXXXXX" required>
+          </div>
+
+          <div class="form-group">
+            <label for="deliveryDate">Delivery Date</label>
+            <input type="date" id="deliveryDate" required>
+          </div>
+        </div>
+
+        <button type="submit" class="submit-btn">Submit Custom Order Request</button>
+        <p class="sub-note" style="text-align: center; margin-top: 16px;">
+          Our team will confirm your order within 2 hours during business hours. You'll receive a confirmation email and a call to finalize details.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<div class="lamination thin" role="presentation"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="seo.html" class="brand">Sweet Crumbs</a>
+      <p class="fine">© 2024 Sweet Crumbs Bakery. All rights reserved.</p>
+    </div>
+    <div>
+      <p><strong>Hours</strong><br>8:00 AM – 9:00 PM Daily</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong><br><a href="tel:+91-XXXXXXXXXX">+91-XXXXXXXXXX</a><br><a href="mailto:hello@sweetcrumbs.in">hello@sweetcrumbs.in</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const flavorNotes = {
+    chocolate: 'Rich dark chocolate with silky ganache',
+    vanilla: 'Classic vanilla bean sponge',
+    strawberry: 'Fresh strawberry with cream',
+    'red-velvet': 'Elegant red velvet cake',
+    lemon: 'Bright and zesty lemon',
+    rasmalai: 'Traditional Indian fusion'
+  };
+
+  let selectedColor = 'Cream';
+
+  function updatePreview() {
+    const occasion = document.getElementById('occasion').value;
+    const flavor = document.getElementById('flavor').value;
+    const message = document.getElementById('message').value;
+    const tiers = document.getElementById('tiers').value;
+
+    const previewCake = document.getElementById('previewCake');
+    const previewText = document.getElementById('previewText');
+    const previewFlavor = document.getElementById('previewFlavor');
+
+    // Update emoji based on occasion
+    let emoji = '🎂';
+    if (occasion === 'wedding') emoji = '💒';
+    if (occasion === 'birthday') emoji = '🎂';
+    if (occasion === 'anniversary') emoji = '💕';
+
+    // Update size based on tiers
+    let size = '150px';
+    if (tiers >= 2) size = '180px';
+    if (tiers >= 3) size = '200px';
+    if (tiers >= 4) size = '220px';
+
+    previewCake.style.width = size;
+    previewCake.style.height = size;
+    previewCake.textContent = emoji;
+
+    previewText.textContent = message || 'Your Custom Cake';
+    previewFlavor.textContent = flavorNotes[flavor] || 'Select a flavor';
+  }
+
+  function selectColor(element, colorName) {
+    document.querySelectorAll('.color-swatch').forEach(el => el.classList.remove('selected'));
+    element.classList.add('selected');
+    selectedColor = colorName;
+
+    const previewCake = document.getElementById('previewCake');
+    previewCake.style.background = element.style.background;
+
+    updatePreview();
+  }
+
+  document.getElementById('designForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+
+    const formData = {
+      occasion: document.getElementById('occasion').value,
+      flavor: document.getElementById('flavor').value,
+      cakeColor: selectedColor,
+      size: document.getElementById('size').value,
+      tiers: document.getElementById('tiers').value,
+      message: document.getElementById('message').value,
+      specialRequests: document.getElementById('specialRequests').value,
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phone: document.getElementById('phone').value,
+      deliveryDate: document.getElementById('deliveryDate').value
+    };
+
+    console.log('Order submitted:', formData);
+
+    // Show success message
+    alert(`Thank you, ${formData.name}! Your custom cake design has been submitted.\n\nWe'll contact you at ${formData.phone} within 2 hours to confirm your order.\n\nDesired Delivery: ${formData.deliveryDate}`);
+
+    // Optionally reset the form
+    this.reset();
+    updatePreview();
+  });
+
+  // Initialize preview
+  updatePreview();
+
+  // Set minimum date to today
+  const today = new Date().toISOString().split('T')[0];
+  document.getElementById('deliveryDate').setAttribute('min', today);
+</script>
+
+</body>
+</html>

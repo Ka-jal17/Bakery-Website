@@ -1,0 +1,254 @@
+/* ============================================================
+   SHARED THEME CSS - Used by all pages
+   ============================================================ */
+
+:root{
+  --espresso:#2B1B12;
+  --espresso-soft:#4A3527;
+  --flour:#FFFBF2;
+  --flour-dim:#F6EFDD;
+  --butter:#F3D98B;
+  --jam:#A8342A;
+  --jam-dark:#7C2620;
+  --sage:#6B7A5E;
+  --muted:#8A7A6B;
+  --radius:2px;
+}
+
+/* ============================================================
+   RESET & BASE STYLES
+   ============================================================ */
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation: none !important; transition: none !important; }
+}
+
+body {
+  margin: 0;
+  background: var(--flour);
+  color: var(--espresso);
+  font-family: 'DM Sans', sans-serif;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  margin: 0;
+  letter-spacing: 0.2px;
+}
+
+.label {
+  font-family: 'Space Mono', monospace;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ============================================================
+   LAMINATION STRIPE (Signature Motif)
+   ============================================================ */
+
+.lamination {
+  height: 14px;
+  width: 100%;
+  background: repeating-linear-gradient(
+    90deg,
+    var(--butter) 0 28px,
+    var(--jam) 28px 30px,
+    var(--flour) 30px 58px,
+    var(--espresso-soft) 58px 60px
+  );
+  opacity: 0.9;
+}
+
+.lamination.thin { height: 6px; }
+
+/* ============================================================
+   HEADER & NAVIGATION
+   ============================================================ */
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--flour);
+  border-bottom: 1px solid rgba(43, 27, 18, 0.12);
+}
+
+.nav-wrap {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand {
+  font-family: 'Instrument Serif', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  color: var(--espresso);
+  text-decoration: none;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 28px;
+  margin: 0;
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav a:hover { color: var(--jam); }
+
+nav a.active { color: var(--jam); border-bottom: 2px solid var(--jam); padding-bottom: 2px; }
+
+.cta-btn {
+  background: var(--espresso);
+  color: var(--flour);
+  padding: 10px 20px;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 700;
+  border: 1px solid var(--espresso);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.cta-btn:hover { background: transparent; color: var(--espresso); }
+
+.cta-btn:focus-visible,
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--jam);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   MAIN CONTENT WRAPPER
+   ============================================================ */
+
+.inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 44px 28px;
+}
+
+.section-head {
+  margin-bottom: 40px;
+}
+
+.section-head .label { display: block; margin-bottom: 8px; }
+
+.section-head h2 {
+  font-size: 2.2rem;
+  font-style: italic;
+  margin-bottom: 14px;
+}
+
+.section-head p {
+  max-width: 60ch;
+  color: var(--muted);
+  font-size: 1rem;
+}
+
+/* ============================================================
+   BUTTONS
+   ============================================================ */
+
+.btn-primary {
+  background: var(--jam);
+  color: var(--flour);
+  padding: 13px 26px;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: var(--radius);
+  border: 1px solid var(--jam);
+  display: inline-block;
+  transition: background 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-primary:hover { background: var(--jam-dark); }
+
+.btn-ghost {
+  color: var(--espresso);
+  padding: 13px 22px;
+  text-decoration: none;
+  font-weight: 700;
+  border: 1px solid var(--espresso);
+  border-radius: var(--radius);
+  display: inline-block;
+  transition: border 0.2s ease;
+}
+
+.btn-ghost:hover { border-color: var(--jam); color: var(--jam); }
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+
+footer {
+  background: var(--espresso);
+  color: #D9CBB4;
+  padding: 44px 28px 30px;
+}
+
+.footer-inner {
+  max-width: 1180px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+footer .brand { color: var(--flour); }
+
+footer a {
+  text-decoration: none;
+  color: #D9CBB4;
+  transition: color 0.2s ease;
+}
+
+footer a:hover { color: var(--butter); }
+
+.fine { font-size: 0.8rem; color: #8A7A63; margin-top: 24px; }
+
+/* ============================================================
+   GRID & LAYOUT
+   ============================================================ */
+
+.grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 900px) {
+  nav ul { display: none; }
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+  .grid { grid-template-columns: 1fr; }
+  nav ul { display: none; }
+  .inner { padding: 28px 14px; }
+}

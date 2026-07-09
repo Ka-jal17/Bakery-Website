@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Sweet Crumbs Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .about-split { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+    .about-split img { border-radius: 4px; }
+    .about-split h2 { font-size: 2rem; margin-bottom: 16px; }
+    .about-split p { font-size: 1.05rem; line-height: 1.8; margin: 12px 0; color: var(--muted); }
+    .values { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 40px; }
+    .value-card {
+      background: var(--flour-dim);
+      padding: 24px;
+      border-radius: 4px;
+      border-top: 3px solid var(--jam);
+    }
+    .value-card h3 { color: var(--jam); margin-bottom: 8px; }
+    @media (max-width: 900px) {
+      .about-split { grid-template-columns: 1fr; }
+      .values { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="seo.html" class="brand">Sweet Crumbs</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="custom-orders.html">Custom Orders</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="visit.html">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="custom-design.html" class="cta-btn">Order a Cake</a>
+  </div>
+</header>
+<div class="lamination" role="presentation"></div>
+
+<section class="inner">
+  <div class="section-head">
+    <span class="label">About</span>
+    <h2>Our Story</h2>
+  </div>
+
+  <div class="about-split">
+    <div>
+      <h2>Baked from Scratch,<br>Made with Love</h2>
+      <p>Sweet Crumbs was founded on a simple belief: that baking should never be rushed, and shortcuts should never be taken. Every layer, every frosting, every cookie that leaves our kitchen in MP Nagar is handmade using the finest ingredients.</p>
+      <p>We started as a home-based passion project and grew into a beloved neighborhood bakery because our customers knew they could taste the care in every bite. No mixes. No preservatives. No shortcuts.</p>
+      <p>Today, we bake fresh every morning and deliver the same day—still warm on pastries, perfectly set on cakes. That's the Sweet Crumbs promise.</p>
+    </div>
+    <div>
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=600&fit=crop" alt="Baking at Sweet Crumbs">
+    </div>
+  </div>
+
+  <div class="values">
+    <div class="value-card">
+      <h3>🌾 Farm to Counter</h3>
+      <p>We source local ingredients whenever possible, supporting our community and ensuring freshness in every bite.</p>
+    </div>
+    <div class="value-card">
+      <h3>🍫 No Shortcuts</h3>
+      <p>No cake mixes, no frozen components, no preservatives. Everything is made from scratch, in small batches, daily.</p>
+    </div>
+    <div class="value-card">
+      <h3>⏰ Same-Day Magic</h3>
+      <p>Order by noon, receive by evening. Your cake is never more than a few hours old. Taste the difference freshness makes.</p>
+    </div>
+  </div>
+</section>
+
+<div class="lamination thin" role="presentation"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="seo.html" class="brand">Sweet Crumbs</a>
+      <p class="fine">© 2024 Sweet Crumbs Bakery. All rights reserved.</p>
+    </div>
+    <div>
+      <p><strong>Hours</strong><br>8:00 AM – 9:00 PM Daily</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong><br><a href="tel:+91-XXXXXXXXXX">+91-XXXXXXXXXX</a><br><a href="mailto:hello@sweetcrumbs.in">hello@sweetcrumbs.in</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
