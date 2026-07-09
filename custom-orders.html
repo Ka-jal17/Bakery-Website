@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Custom Orders | Sweet Crumbs Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .order-process { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 40px 0; }
+    .step {
+      background: var(--flour-dim);
+      padding: 24px;
+      border-radius: 4px;
+      text-align: center;
+      border-top: 3px solid var(--butter);
+    }
+    .step.active { border-top-color: var(--jam); }
+    .step-num { font-family: 'Space Mono', monospace; font-size: 2rem; font-weight: 700; color: var(--butter); display: block; margin-bottom: 8px; }
+    .step.active .step-num { color: var(--jam); }
+    .step h3 { margin: 12px 0; }
+    .featured-designs { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin: 40px 0; }
+    .design-card {
+      border-radius: 4px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 8px rgba(43, 27, 18, 0.1);
+      transition: transform 0.3s ease;
+    }
+    .design-card:hover { transform: translateY(-4px); }
+    .design-card img { width: 100%; height: 250px; object-fit: cover; }
+    .design-card-content { padding: 16px; }
+    .design-card h3 { margin: 8px 0; font-size: 1.1rem; }
+    .design-card p { font-size: 0.9rem; color: var(--muted); margin: 4px 0; }
+    .order-cta { display: inline-block; margin-top: 16px; }
+    @media (max-width: 900px) {
+      .order-process { grid-template-columns: 1fr 1fr; }
+      .featured-designs { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">Sweet Crumbs</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="custom-orders.html" class="active">Custom Orders</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="visit.html">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="custom-design.html" class="cta-btn">Order a Cake</a>
+  </div>
+</header>
+<div class="lamination" role="presentation"></div>
+
+<section class="inner">
+  <div class="section-head">
+    <span class="label">Custom Orders</span>
+    <h2>Design Your Perfect Cake</h2>
+    <p>We love creating custom cakes for birthdays, weddings, anniversaries, and special moments. Tell us your vision, and we'll bring it to life.</p>
+  </div>
+
+  <h3 style="margin-top: 40px; margin-bottom: 20px;">The Process</h3>
+  <div class="order-process">
+    <div class="step">
+      <span class="step-num">1</span>
+      <h3>Design</h3>
+      <p>Tell us your ideas: flavors, colors, design themes, dietary preferences.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">2</span>
+      <h3>Confirm</h3>
+      <p>We discuss details, show sketches, and finalize pricing and delivery date.</p>
+    </div>
+    <div class="step">
+      <span class="step-num">3</span>
+      <h3>Bake</h3>
+      <p>We prepare your custom cake fresh the day before, stored carefully overnight.</p>
+    </div>
+    <div class="step active">
+      <span class="step-num">4</span>
+      <h3>Deliver</h3>
+      <p>Same-day delivery to your doorstep or pickup from our MP Nagar location.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top: 40px; margin-bottom: 20px;">Featured Custom Designs</h3>
+  <div class="featured-designs">
+    <div class="design-card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Wedding Cake">
+      <div class="design-card-content">
+        <h3>Wedding Elegance</h3>
+        <p>Tiered wedding cake with fresh flowers and gold accents.</p>
+        <p><strong>₹3,500+</strong></p>
+        <a href="custom-design.html" class="btn-primary order-cta">Design Similar</a>
+      </div>
+    </div>
+
+    <div class="design-card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Birthday Cake">
+      <div class="design-card-content">
+        <h3>Birthday Fun</h3>
+        <p>Chocolate cake with colorful decorations and custom message.</p>
+        <p><strong>₹1,200+</strong></p>
+        <a href="custom-design.html" class="btn-primary order-cta">Design Similar</a>
+      </div>
+    </div>
+
+    <div class="design-card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&h=300&fit=crop" alt="Themed Cake">
+      <div class="design-card-content">
+        <h3>Themed Creations</h3>
+        <p>Specialty cakes for anniversaries, corporate events, and more.</p>
+        <p><strong>₹2,000+</strong></p>
+        <a href="custom-design.html" class="btn-primary order-cta">Design Similar</a>
+      </div>
+    </div>
+  </div>
+
+  <div style="background: var(--flour-dim); padding: 32px; border-radius: 4px; margin: 40px 0; border-left: 4px solid var(--jam);">
+    <h3>📋 What We Need to Know</h3>
+    <ul style="list-style: disc; margin-left: 20px;">
+      <li><strong>Size:</strong> How many servings? (typical: 1kg serves 8-10 people)</li>
+      <li><strong>Flavor:</strong> Your preferred cake base and frosting</li>
+      <li><strong>Design:</strong> Colors, themes, special decorations, written messages</li>
+      <li><strong>Dietary Needs:</strong> Gluten-free, vegan, nut allergies, etc.</li>
+      <li><strong>Delivery:</strong> Date and time that works best for you</li>
+    </ul>
+  </div>
+
+  <div style="text-align: center; margin: 40px 0;">
+    <h3>Ready to Create Your Cake?</h3>
+    <p style="color: var(--muted); margin: 12px 0;">Start designing your custom cake now.</p>
+    <a href="custom-design.html" class="btn-primary">Start Your Design</a>
+  </div>
+</section>
+
+<div class="lamination thin" role="presentation"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="seo.html" class="brand">Sweet Crumbs</a>
+      <p class="fine">© 2024 Sweet Crumbs Bakery. All rights reserved.</p>
+    </div>
+    <div>
+      <p><strong>Hours</strong><br>8:00 AM – 9:00 PM Daily</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong><br><a href="tel:+91-XXXXXXXXXX">+91-XXXXXXXXXX</a><br><a href="mailto:hello@sweetcrumbs.in">hello@sweetcrumbs.in</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

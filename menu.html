@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | Sweet Crumbs Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .menu-item {
+      border-top: 2px solid var(--espresso);
+      padding-top: 16px;
+      transition: transform 0.2s ease;
+    }
+    .menu-item:hover { transform: translateY(-4px); }
+    .menu-item h3 {
+      font-size: 1.3rem;
+      font-style: italic;
+      color: var(--espresso);
+      margin: 8px 0;
+    }
+    .menu-item .desc { color: var(--muted); font-size: 0.95rem; margin: 8px 0; }
+    .menu-item .price { font-family: 'Space Mono', monospace; font-weight: 700; color: var(--jam); }
+    @media (max-width: 900px) {
+      .menu-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">Sweet Crumbs</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="menu.html" class="active">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="custom-orders.html">Custom Orders</a></li>
+        <li><a href="journal.html">Journal</a></li>
+        <li><a href="visit.html">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="custom-design.html" class="cta-btn">Order a Cake</a>
+  </div>
+</header>
+<div class="lamination" role="presentation"></div>
+
+<section class="inner">
+  <div class="section-head">
+    <span class="label">Our Menu</span>
+    <h2>Freshly Baked Daily</h2>
+    <p>Everything on our menu is baked fresh in small batches. When an item sells out, it's gone until tomorrow—no freezers, no shortcuts.</p>
+  </div>
+
+  <div class="menu-grid">
+    <div class="menu-item">
+      <h3>Dark Chocolate Truffle</h3>
+      <p class="desc">Rich, decadent dark chocolate cake with silky chocolate ganache. The ultimate choice for chocolate lovers.</p>
+      <p class="price">₹950 (1kg)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Black Forest Cake</h3>
+      <p class="desc">Classic German cake with fresh cherries, whipped cream, and dark chocolate shavings. A timeless masterpiece.</p>
+      <p class="price">₹750 (1kg)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Rasmalai Fusion Cake</h3>
+      <p class="desc">Traditional Indian flavors meet modern baking. Creamy rasmalai with sponge cake and pistachio dust.</p>
+      <p class="price">₹1,050 (1kg)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Vanilla Bean Cheesecake</h3>
+      <p class="desc">Smooth, creamy cheesecake with real vanilla beans. Paired with graham cracker crust.</p>
+      <p class="price">₹850 (1kg)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Assorted Danish Pastries</h3>
+      <p class="desc">A delightful mix of butter, jam-filled, and almond Danish pastries. Perfect for breakfast or dessert.</p>
+      <p class="price">₹360 (Box of 6)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Classic Butter Cookies</h3>
+      <p class="desc">Crispy, buttery cookies with just the right amount of sweetness. Made with high-quality European butter.</p>
+      <p class="price">₹220 (250g)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Cupcake Trio</h3>
+      <p class="desc">Vanilla Bean, Chocolate Fudge, and Red Velvet. Three flavors in one delightful box.</p>
+      <p class="price">₹180 (Pack of 3)</p>
+    </div>
+
+    <div class="menu-item">
+      <h3>Lemon Drizzle Cake</h3>
+      <p class="desc">Bright, zesty lemon cake topped with tangy lemon glaze. Perfect for a refreshing afternoon treat.</p>
+      <p class="price">₹700 (1kg)</p>
+    </div>
+  </div>
+</section>
+
+<div class="lamination thin" role="presentation"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="seo.html" class="brand">Sweet Crumbs</a>
+      <p class="fine">© 2024 Sweet Crumbs Bakery. All rights reserved.</p>
+    </div>
+    <div>
+      <p><strong>Hours</strong><br>8:00 AM – 9:00 PM Daily</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong><br><a href="tel:+91-XXXXXXXXXX">+91-XXXXXXXXXX</a><br><a href="mailto:hello@sweetcrumbs.in">hello@sweetcrumbs.in</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

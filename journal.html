@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Journal | Sweet Crumbs Bakery</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=DM+Sans:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="theme.css">
+  <style>
+    .journal-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px; }
+    .journal-card {
+      border-radius: 4px;
+      overflow: hidden;
+      background: white;
+      box-shadow: 0 2px 8px rgba(43, 27, 18, 0.1);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+    }
+    .journal-card:hover {
+      box-shadow: 0 8px 24px rgba(43, 27, 18, 0.15);
+      transform: translateY(-4px);
+    }
+    .journal-card img { width: 100%; height: 250px; object-fit: cover; }
+    .journal-card-content { padding: 24px; }
+    .journal-card .label { display: block; margin-bottom: 8px; }
+    .journal-card h3 { font-size: 1.3rem; font-style: italic; margin: 8px 0; }
+    .journal-card p { font-size: 0.95rem; color: var(--muted); line-height: 1.6; }
+    .read-more { color: var(--jam); font-weight: 700; margin-top: 12px; display: inline-block; cursor: pointer; }
+    .read-more:hover { text-decoration: underline; }
+    @media (max-width: 900px) {
+      .journal-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">Sweet Crumbs</a>
+    <nav aria-label="Primary">
+      <ul>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="custom-orders.html">Custom Orders</a></li>
+        <li><a href="journal.html" class="active">Journal</a></li>
+        <li><a href="visit.html">Visit</a></li>
+      </ul>
+    </nav>
+    <a href="custom-design.html" class="cta-btn">Order a Cake</a>
+  </div>
+</header>
+<div class="lamination" role="presentation"></div>
+
+<section class="inner">
+  <div class="section-head">
+    <span class="label">Our Journal</span>
+    <h2>Stories from the Kitchen</h2>
+    <p>Behind-the-scenes glimpses into our baking process, ingredient sourcing, and the stories that make Sweet Crumbs special.</p>
+  </div>
+
+  <div class="journal-grid">
+    <div class="journal-card">
+      <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?w=500&h=300&fit=crop" alt="Chocolate tempering">
+      <div class="journal-card-content">
+        <span class="label">October 15, 2024</span>
+        <h3>The Art of Chocolate Tempering</h3>
+        <p>Discover why we hand-temper our chocolate ganache to achieve that perfect snap and silky finish. Learn the science behind the craft.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=500&h=300&fit=crop" alt="Sourdough starter">
+      <div class="journal-card-content">
+        <span class="label">October 8, 2024</span>
+        <h3>Meet Our Sourdough Starter</h3>
+        <p>Our sourdough starter has been alive for 5 years. Learn how we maintain and nurture it to create the perfect tang and texture.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <img src="https://images.unsplash.com/photo-1576618148828-0da9d1f29d40?w=500&h=300&fit=crop" alt="Local farmers">
+      <div class="journal-card-content">
+        <span class="label">September 28, 2024</span>
+        <h3>Supporting Local Farmers</h3>
+        <p>We partner with local farmers for our eggs, butter, and cream. A conversation with the people who supply our finest ingredients.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+    </div>
+
+    <div class="journal-card">
+      <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&h=300&fit=crop" alt="Macarons">
+      <div class="journal-card-content">
+        <span class="label">September 18, 2024</span>
+        <h3>Mastering French Macarons</h3>
+        <p>The secrets we've learned perfecting these delicate shells. Why humidity matters more than you think, and how we nail consistency.</p>
+        <span class="read-more">Read More →</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="lamination thin" role="presentation"></div>
+
+<footer>
+  <div class="footer-inner">
+    <div>
+      <a href="seo.html" class="brand">Sweet Crumbs</a>
+      <p class="fine">© 2024 Sweet Crumbs Bakery. All rights reserved.</p>
+    </div>
+    <div>
+      <p><strong>Hours</strong><br>8:00 AM – 9:00 PM Daily</p>
+    </div>
+    <div>
+      <p><strong>Contact</strong><br><a href="tel:+91-XXXXXXXXXX">+91-XXXXXXXXXX</a><br><a href="mailto:hello@sweetcrumbs.in">hello@sweetcrumbs.in</a></p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
